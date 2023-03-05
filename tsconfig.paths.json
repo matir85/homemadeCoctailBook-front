@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "types": [
-        "../homemadeCoctailBook-back/types"
+        "../homemadeCocktailBook-back/types"
       ]
     }
   }
