@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {ProductEntity} from "types";
 import { ProductTable } from "./ProductTable";
+import {ButtonLink} from "../Button/ButtonLink";
 
 export const ProductList = () => {
 
@@ -23,6 +24,7 @@ export const ProductList = () => {
     return (
         <div className='productList'>
             <ProductTable products={productList} onProductChange={refreshProductList}/>
+            <ButtonLink text={'Dodaj'} to={'#'}/>
         </div>
     )
 }

@@ -1,15 +1,26 @@
+.productList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    width: 600px;
+}
+
 .tableProduct {
     margin: 10px auto;
 }
+
 .oneItemInRow {
     height: 20px;
     padding: 5px 10px;
     font-size: 20px;
 }
+
 tr .tableHead {
     font-family: Sono, sans-serif;
     font-size: 20px;
 }
+
 .oneItemInRow__name {
     width: 200px;
     background-color: lightgrey;
