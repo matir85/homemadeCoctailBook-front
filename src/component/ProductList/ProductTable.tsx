@@ -14,6 +14,7 @@ export const ProductTable = (props: Props) => {
             <tr>
                 <th className='oneItemInRow__name oneItemInRow tableHead'>Produkt</th>
                 <th className='oneItemInRow__quantity oneItemInRow tableHead'>Ilość w ml</th>
+                <th className='oneItemInRow__delete oneItemInRow tableHead'>Usuń</th>
             </tr>
             </thead>
             <tbody>

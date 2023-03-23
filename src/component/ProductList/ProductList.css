@@ -33,6 +33,13 @@ tr .tableHead {
     text-align: end;
     background-color: #c7c6c6;
 }
+.oneItemInRow__delete
+{
+    font-family: Sono, sans-serif;
+    width: 50px;
+    text-align: center;
+    background-color: lightgrey;
+}
 .info__header_productList{
     font-family: Sono, sans-serif;
     margin: 10px 0;
