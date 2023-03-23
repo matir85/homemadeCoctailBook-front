@@ -4,6 +4,7 @@ import {Header} from "./component/Hrader/Header";
 
 import './App.css';
 import {ProductList} from "./component/ProductList/ProductList";
+import {AddProduct} from "./component/AddProduct/AddProduct";
 
 export function App() {
     return (
@@ -12,6 +13,7 @@ export function App() {
             <div className="App">
                 <Routes>
                     <Route path='/product' element={<ProductList/>}/>
+                    <Route path='/product/add' element={<AddProduct/>}/>
                 </Routes>
             </div>
         </>

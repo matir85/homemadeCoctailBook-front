@@ -24,7 +24,7 @@ export const ProductList = () => {
     return (
         <div className='productList'>
             <ProductTable products={productList} onProductChange={refreshProductList}/>
-            <ButtonLink text={'Dodaj'} to={'#'}/>
+            <ButtonLink text={'Dodaj'} to={'/product/add'}/>
         </div>
     )
 }
