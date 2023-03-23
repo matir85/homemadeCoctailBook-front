@@ -18,5 +18,11 @@ input {
 }
 .btnSubmit {
     cursor: pointer;
+    box-sizing: content-box;
+    margin: 10px 0;
+}
+.info__add_success {
+    font-family: Sono, sans-serif;
+    padding: 10px;
     margin: 10px 0;
 }

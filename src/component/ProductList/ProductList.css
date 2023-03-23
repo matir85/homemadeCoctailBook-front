@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-items: center;
-    width: 600px;
+    width: 800px;
 }
 
 .tableProduct {
@@ -22,7 +22,7 @@ tr .tableHead {
 }
 
 .oneItemInRow__name {
-    width: 200px;
+    width: 300px;
     background-color: lightgrey;
     font-family: Roboto, sans-serif;
 }
@@ -32,4 +32,8 @@ tr .tableHead {
     width: 150px;
     text-align: end;
     background-color: #c7c6c6;
+}
+.info__header_productList{
+    font-family: Sono, sans-serif;
+    margin: 10px 0;
 }

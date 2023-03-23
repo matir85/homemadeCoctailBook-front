@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {ProductEntity} from "types";
 import { ProductTable } from "./ProductTable";
 import {ButtonLink} from "../Button/ButtonLink";
+import {Spinner} from "../Spinner/Spinner";
 
 export const ProductList = () => {
 
@@ -19,10 +20,11 @@ export const ProductList = () => {
         refreshProductList()
     },[])
 
-    if(!productList) return <p>Pusty barek</p>
+    if(!productList) return <Spinner/>
 
     return (
         <div className='productList'>
+            <h1 className='info__header_productList'>Lista dostępnych produktów do mieszania</h1>
             <ProductTable products={productList} onProductChange={refreshProductList}/>
             <ButtonLink text={'Dodaj'} to={'/product/add'}/>
         </div>
