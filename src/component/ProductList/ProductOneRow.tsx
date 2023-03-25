@@ -16,9 +16,11 @@ export const ProductOneRow = (props: Props) => {
             return
         }
 
-        const res = await fetch(`http://192.168.1.197:3001/gift/${props.product.id}`, {
+        const res = await fetch(`http://localhost:3001/product/${props.product.id}`, {
             method: 'DELETE',
         });
+
+
         if ([400, 500].includes(res.status)) {
             const error = await res.json()
             alert(error.message)
@@ -33,7 +35,7 @@ export const ProductOneRow = (props: Props) => {
             <td className='oneItemInRow__name oneItemInRow'>{props.product.name}</td>
             <td className='oneItemInRow__quantity oneItemInRow'>{props.product.quantity}</td>
             <td className='oneItemInRow__delete'>
-                <a href="#"  onClick={deleteProduct} className='link'>🗑️</a>
+                <a href="#"  onClick={deleteProduct} className='link btn_delete'>🗑️</a>
             </td>
         </tr>
     )

@@ -5,6 +5,7 @@ import {Header} from "./component/Hrader/Header";
 import './App.css';
 import {ProductList} from "./component/ProductList/ProductList";
 import {AddProduct} from "./component/AddProduct/AddProduct";
+import {CoctailList} from "./component/CoctailList/CoctailList";
 
 export function App() {
     return (
@@ -14,6 +15,7 @@ export function App() {
                 <Routes>
                     <Route path='/product' element={<ProductList/>}/>
                     <Route path='/product/add' element={<AddProduct/>}/>
+                    <Route path='/coctail' element={<CoctailList/>}/>
                 </Routes>
             </div>
         </>
