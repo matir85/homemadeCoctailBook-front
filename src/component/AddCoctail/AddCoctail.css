@@ -1,0 +1,30 @@
+.ingredient__p {
+    display: flex;
+    margin-top: 10px;
+}
+
+.ingredient__label {
+}
+
+.ingredient__select {
+    height: 20px;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.ingredient__option {
+    font-size: 16px;
+}
+
+.ingredient__input__quantity {
+    margin-left: 5px;
+}
+.btnPlus {
+    display: block;
+    margin: 5px 0;
+    cursor: pointer;
+    font-size: large;
+}
+.ingredient__description {
+    margin: 5px 0;
+}
