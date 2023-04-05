@@ -1,17 +1,18 @@
 .btn {
     width: 100px;
-    background: #e0dede;
+    background: black;
     font-family: "Roboto", sans-serif;
     font-weight: bold;
     text-align: center;
     font-size: 15px;
+    color: #ffd700;
     padding: 10px 15px;
-    border: 1px solid black;
+    border: 1px solid #ffd700;
     border-radius: 15px;
 }
 
 .link {
     text-decoration: none;
-    color: black;
+    color: #ffd700;
     font-size: 20px;
 }

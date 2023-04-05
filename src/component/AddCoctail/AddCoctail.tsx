@@ -1,5 +1,5 @@
 import React, {ChangeEvent, FormEvent, useEffect, useState} from "react";
-import {CoctailDescription, CoctailIngredients, ProductEntity} from "types";
+import {CoctailDescription, CoctailEntity, CoctailIngredients, ProductEntity} from "types";
 
 import {Spinner} from "../Spinner/Spinner";
 import {ChoiceOfIngredient} from "./ChoiceOfIngredient";
@@ -7,6 +7,8 @@ import {TextField} from "@mui/material";
 import {SelectChangeEvent} from "@mui/material/Select/SelectInput";
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import './AddCoctail.css';
+import {Simulate} from "react-dom/test-utils";
+import error = Simulate.error;
 
 export const AddCoctail = () => {
 
@@ -39,16 +41,14 @@ export const AddCoctail = () => {
         }))
     }
 
-
     const addRowIngredient = () => {
         let newRowIngredient = {ingredient: '', quantity: 0}
         setFormIngredient([...formIngredient, newRowIngredient])
     }
 
-
     const [productList, setProductList] = useState<ProductEntity[] | null>(null)
 
-    const refreshProductList = async () => {
+    const productsAvailable = async () => {
         const res = await fetch('http://localhost:3001/product', {
             headers: {}
         })
@@ -57,26 +57,31 @@ export const AddCoctail = () => {
     }
 
     useEffect(() => {
-        refreshProductList()
+        productsAvailable()
     }, [])
 
 
     const sendForm = async (e: FormEvent) => {
         e.preventDefault()
-        console.log(formName.name)
-        console.log(formIngredient)
-        console.log(formName.description)
-        // const resData = await fetch('http://localhost:3001/coctail/add', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(form)
-        // })
+        console.log(formName)
 
-        // const data: ProductEntity = await resData.json()
+        try {
+            const resCoctailData = await fetch('http://localhost:3001/coctail', {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formName)
+            })
 
+            const dataCoctailName: CoctailEntity = await resCoctailData.json()
+        } catch (err) {
+            console.log(err)
+            throw new Error()
+        }
     }
+
     if (!productList) return <Spinner/>
 
 

@@ -5,8 +5,9 @@
     height: 200px;
     justify-content: center;
     align-items: center;
-    background-color: lightgreen;
-    border-bottom: 1px solid black;
+    background-color: black;
+    border-bottom: 1px solid #ffd700;
     font-family: "Roboto Thin", sans-serif;
     font-size: 3em;
+    color: #ffd700;
 }
