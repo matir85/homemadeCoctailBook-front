@@ -1,0 +1,19 @@
+.homeSite {
+    display: flex;
+    width: 800px;
+    margin-top: 150px;
+    justify-content: space-around;
+
+}
+.btnNav {
+    padding: 25px;
+    background-color: black;
+    text-decoration: none;
+}
+.buttonSignature {
+    font-family: "Sono", sans-serif;
+    text-align: center;
+    font-size: 24px;
+    color: #ffd700;
+}
+

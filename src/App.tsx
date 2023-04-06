@@ -7,6 +7,8 @@ import {AddProduct} from "./component/AddProduct/AddProduct";
 import {CoctailList} from "./component/CoctailList/CoctailList";
 import {AddCoctail} from "./component/AddCoctail/AddCoctail";
 import './App.css';
+import {Home} from "./component/Home/Home";
+
 
 export function App() {
     return (
@@ -14,6 +16,7 @@ export function App() {
             <Header/>
             <div className="App">
                 <Routes>
+                    <Route path='/' element={<Home/>}/>
                     <Route path='/product' element={<ProductList/>}/>
                     <Route path='/product/add' element={<AddProduct/>}/>
                     <Route path='/coctail' element={<CoctailList/>}/>

@@ -1,5 +1,5 @@
 import React, {ChangeEvent, FormEvent, useEffect, useState} from "react";
-import {CoctailDescription, CoctailEntity, CoctailIngredients, ProductEntity} from "types";
+import {CoctailDescription, CoctailIngredients, ProductEntity} from "types";
 
 import {Spinner} from "../Spinner/Spinner";
 import {ChoiceOfIngredient} from "./ChoiceOfIngredient";
@@ -7,8 +7,6 @@ import {TextField} from "@mui/material";
 import {SelectChangeEvent} from "@mui/material/Select/SelectInput";
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import './AddCoctail.css';
-import {Simulate} from "react-dom/test-utils";
-import error = Simulate.error;
 
 export const AddCoctail = () => {
 
@@ -49,11 +47,16 @@ export const AddCoctail = () => {
     const [productList, setProductList] = useState<ProductEntity[] | null>(null)
 
     const productsAvailable = async () => {
-        const res = await fetch('http://localhost:3001/product', {
-            headers: {}
-        })
-        const data = await res.json()
-        setProductList(data.productList)
+        try{
+            const res = await fetch('http://localhost:3001/product', {
+                headers: {}
+            })
+            const data = await res.json()
+            setProductList(data.productList)
+        } catch (err) {
+            console.log('Problem z bazą');
+        }
+
     }
 
     useEffect(() => {
@@ -63,23 +66,19 @@ export const AddCoctail = () => {
 
     const sendForm = async (e: FormEvent) => {
         e.preventDefault()
-        console.log(formName)
+        // console.log(formName)
 
-        try {
-            const resCoctailData = await fetch('http://localhost:3001/coctail', {
-                method: 'POST',
-                mode: 'cors',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formName)
-            })
+        const resCoctailData = await fetch('http://localhost/coctail', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formName)
+        })
+        console.log(resCoctailData)
+        // const dataCoctailName: CoctailEntity = await resCoctailData.json()
+        // console.log(dataCoctailName);
 
-            const dataCoctailName: CoctailEntity = await resCoctailData.json()
-        } catch (err) {
-            console.log(err)
-            throw new Error()
-        }
     }
 
     if (!productList) return <Spinner/>
@@ -88,7 +87,7 @@ export const AddCoctail = () => {
     return (
         <form onSubmit={sendForm}>
             <h2>Stwórz koktail</h2>
-            <p className='ingredient__p'>
+            <div className='ingredient__p'>
                 <TextField
                     sx={{width: '400px'}}
                     id="outlined-basic"
@@ -97,24 +96,24 @@ export const AddCoctail = () => {
                     variant="outlined"
                     onChange={e => handleNameFormChange('name', e.target.value)}
                 />
-            </p>
+            </div>
             {formIngredient.map((form, index) => {
                 return (
-                    <p className='ingredient__single__input'>
+                    <div className='ingredient__single__input'>
                         <ChoiceOfIngredient
                             productList={productList}
                             handleIngredientFormChange={handleIngredientFormChange}
                             index={index} inputRow={form}/>
-                    </p>
+                    </div>
                 )
             })}
-            <p>
+            <div>
                 <AddCircleOutlineOutlinedIcon
                     className='btnPlus'
                     onClick={addRowIngredient}
                     sx={{fontSize: 30}}/>
-            </p>
-            <p className='ingredient__description'>
+            </div>
+            <div className='ingredient__description'>
                 <TextField
                     sx={{width: 400}}
                     id="outlined-multiline-static"
@@ -123,7 +122,7 @@ export const AddCoctail = () => {
                     rows={4}
                     onChange={e => handleNameFormChange('description', e.target.value)}
                 />
-            </p>
+            </div>
             <button type='submit' className='btn btnSubmit'>Dodaj</button>
         </form>
     )

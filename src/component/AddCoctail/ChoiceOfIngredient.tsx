@@ -15,7 +15,7 @@ interface Props {
 export const ChoiceOfIngredient = (props: Props) => {
 
     return (
-        <p className='ingredient__p'>
+        <div className='ingredient__p'>
             <FormControl fullWidth sx={{mr: 2}} key={props.index}>
                 <InputLabel id="demo-simple-select-label">Składnik {props.index + 1}</InputLabel>
                 <Select
@@ -47,7 +47,7 @@ export const ChoiceOfIngredient = (props: Props) => {
                 value={props.inputRow.quantity}
                 onChange={event => props.handleIngredientFormChange(props.index, event)}
             />
-        </p>
+        </div>
     )
 }
 
