@@ -1,5 +1,5 @@
 import React, {ChangeEvent, FormEvent, useEffect, useState} from "react";
-import {CocktailRecipeEntity, CoctailDescription, CoctailEntity, CoctailIngredients, ProductEntity} from "types";
+import { CoctailDescription, CoctailEntity, CoctailIngredients, ProductEntity} from "types";
 
 import {Spinner} from "../Spinner/Spinner";
 import {ChoiceOfIngredient} from "./ChoiceOfIngredient";
@@ -77,25 +77,27 @@ export const AddCoctail = () => {
         })
 
         const dataCoctailName: CoctailEntity = await resCoctailData.json()
-        // console.log(dataCoctailName)
 
-        formIngredient.map(async ingradient => {
+         formIngredient.map(async ingradient => {
 
             if (!dataCoctailName.id) return `Brak id nazwy koktailu`
+            const singleCocktailIngredient = {
+                idCoctail: dataCoctailName.id,
+                idProduct: ingradient.ingredient,
+                quantity: ingradient.quantity
+            }
+             console.log(singleCocktailIngredient)
             const resCocktailRecipeData = await fetch('http://localhost:3001/cocktail-recipe', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'aplication/json'
+                    'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({
-                    idCocktail: dataCoctailName.id,
-                    idProduct: ingradient.ingredient,
-                    guantity: ingradient.quantity
-                })
+                body: JSON.stringify(singleCocktailIngredient)
             })
+             console.log(singleCocktailIngredient)
 
-            const dataCocktailRecipe: CocktailRecipeEntity = await resCocktailRecipeData.json()
-            console.log(`Zwrotny id jednego rzędu składnika koktailu: ${dataCocktailRecipe}`);
+            // const dataCocktailRecipe: CocktailRecipeEntity = await resCocktailRecipeData.json()
+            // console.log(`Zwrotny id jednego rzędu składnika koktailu: ${dataCocktailRecipe}`);
         })
 
     }
