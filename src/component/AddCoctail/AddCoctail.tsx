@@ -1,5 +1,5 @@
 import React, {ChangeEvent, FormEvent, useEffect, useState} from "react";
-import {CoctailDescription, CoctailIngredients, ProductEntity} from "types";
+import {CocktailRecipeEntity, CoctailDescription, CoctailEntity, CoctailIngredients, ProductEntity} from "types";
 
 import {Spinner} from "../Spinner/Spinner";
 import {ChoiceOfIngredient} from "./ChoiceOfIngredient";
@@ -75,9 +75,28 @@ export const AddCoctail = () => {
             },
             body: JSON.stringify(formName)
         })
-        console.log(resCoctailData)
-        // const dataCoctailName: CoctailEntity = await resCoctailData.json()
-        // console.log(dataCoctailName);
+
+        const dataCoctailName: CoctailEntity = await resCoctailData.json()
+        // console.log(dataCoctailName)
+
+        formIngredient.map(async ingradient => {
+
+            if (!dataCoctailName.id) return `Brak id nazwy koktailu`
+            const resCocktailRecipeData = await fetch('http://localhost:3001/cocktail-recipe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'aplication/json'
+                },
+                body: JSON.stringify({
+                    idCocktail: dataCoctailName.id,
+                    idProduct: ingradient.ingredient,
+                    guantity: ingradient.quantity
+                })
+            })
+
+            const dataCocktailRecipe: CocktailRecipeEntity = await resCocktailRecipeData.json()
+            console.log(`Zwrotny id jednego rzędu składnika koktailu: ${dataCocktailRecipe}`);
+        })
 
     }
 
