@@ -3,6 +3,7 @@ import { CoctailEntity } from "types";
 import { CoctailCard } from "./CoctailCard";
 
 import './CoctailList.css'
+import {ButtonLink} from "../Button/ButtonLink";
 export const CoctailList = () => {
 
     const [coctailList, setCoctailList] = useState<CoctailEntity[] | null>(null);
@@ -23,9 +24,13 @@ export const CoctailList = () => {
         return <h1>Brak koktajli w bazie danych</h1>
     }
     return (
-<div className='coctaiList'>
-    {coctailList.map(coctail => <CoctailCard key={coctail.id} coctails={coctail}/>)}
-</div>
+        <div>
+            <div className='coctaiList'>
+                {coctailList.map(coctail => <CoctailCard key={coctail.id} coctails={coctail}/>)}
+            </div>
+            <ButtonLink text='Dodaj kolejny koktajl' to='/coctail/add'/>
+        </div>
+
     )
 
 }

@@ -68,7 +68,7 @@ export const AddCoctail = () => {
         e.preventDefault()
         // console.log(formName)
 
-        const resCoctailData = await fetch('http://localhost/coctail', {
+        const resCoctailData = await fetch('http://localhost:3001/coctail', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -1,6 +1,10 @@
 .coctaiList {
-display: flex;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 10px 0;
 }
+
 .coctailCard {
     width: 250px;
     margin: 10px;
