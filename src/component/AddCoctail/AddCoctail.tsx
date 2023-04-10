@@ -87,7 +87,7 @@ export const AddCoctail = () => {
                 quantity: ingradient.quantity
             }
              console.log(singleCocktailIngredient)
-            const resCocktailRecipeData = await fetch('http://localhost:3001/cocktail-recipe', {
+            await fetch('http://localhost:3001/cocktail-recipe', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -95,9 +95,6 @@ export const AddCoctail = () => {
                 body: JSON.stringify(singleCocktailIngredient)
             })
              console.log(singleCocktailIngredient)
-
-            // const dataCocktailRecipe: CocktailRecipeEntity = await resCocktailRecipeData.json()
-            // console.log(`Zwrotny id jednego rzędu składnika koktailu: ${dataCocktailRecipe}`);
         })
 
     }
