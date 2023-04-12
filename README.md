@@ -77,6 +77,7 @@ Przykład aploikacji do zarządzania domowym barkiem.
 - [x] Projekt widoku podstrony z dodawaniem / tworzeniem koktajli
     - [x] Obsługa dodawania koktajli
     - [ ] Obsługa usuwania koktajli
+- [ ] Stworzenie Designe z prawdziwego zdarzenia 
 
 <hr/>
 
