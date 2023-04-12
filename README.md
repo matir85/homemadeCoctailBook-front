@@ -1,46 +1,81 @@
-# Getting Started with Create React App
+# Projekt na zaliczenie
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <a href="https://www.megak.pl/" target="_blank" rel="noreferrer"> <img src="https://github.com/Keszua/megak-game-over-front/raw/main/public/images/megak.png" alt="MegaK" height="80"/>
+  </a>
+</p>
 
-## Available Scripts
+# Front End
 
-In the project directory, you can run:
+Projekt na zaliczenie drugiej edycji [Mega Kursu JavaScriptu MegaK](https://www.megak.pl)
 
-### `npm start`
+To jest **front end** napisany w ***React***
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Do prawidłowego działania, wymagany jest **back end** dostępny pod [tym adresem](https://github.com/matir85/homemadeCocktailBook-back/tree/develop/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+<hr/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Opis projektu
+Przykład aploikacji do zarządzania domowym barkiem.
+- projekt wyglądu (stylowanie)
+- lista produktów (pobieranych z bazy danych)
+- formularz dodawania produktu
+- kadry koktaili (pobieranych z bazy danych)
+- formularz tworzenia nowego koktajlu
+- urzycie aktualnych technologii oraz trendów:
+    - React Hooks
+    - React Routing
+    - pobieranie danych za pomocą Fetch API
+    - REST API (GET, POST, DELETE)
+    - asynchroniczna kod (IIFE, async / await)
+    - obsługa błędów (try / catch)
+    - podział projektu na moduły (wydzielone widoki, komponenty)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<hr/>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Zastosowane języki i technologie
+<p align="center">
+  <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="60" height="60"/>
+  </a> 
+</p>
+<p align="center">
+  <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> 
+  </a> 
+  <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> 
+  </a> 
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/>
+  </a> 
+  <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/>
+  </a> 
+  <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> 
+  </a>
+  <a href="https://github.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/jmnote/z-icons/master/svg/github.svg" alt="github" width="50" height="40"/> 
+  </a> 
+</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+<hr/>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Zadania
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [x] Instalacj Reacta w wersji TypeScript
+- [x] Założenie repozytorium na GitHub
+- [x] Przygotowanie pliku README
+- [x] Konfiguracj Git i wypchniecie projektu na zdlane repozytorium
+- [x] Połączenie wspólnych typów FE i BE
+- [x] Projekt podziału strony
+- [x] Projekt przykładowego nagłówka
+- [x] Widoki i Routing
+- [x] Projekt widoku podstrony z produktami
+- [x] Projekt widoku podstrony z dodawaniem produktów
+    - [x] Obsługa dodawania produktów
+    - [x] Obsługa usuwania produktów
+- [x] Projekt widoku podstrony z koktajlami
+- [x] Projekt widoku podstrony z dodawaniem / tworzeniem koktajli
+    - [x] Obsługa dodawania koktajli
+    - [ ] Obsługa usuwania koktajli
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<hr/>
