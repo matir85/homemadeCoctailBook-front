@@ -79,3 +79,89 @@ Przykład aploikacji do zarządzania domowym barkiem.
     - [ ] Obsługa usuwania koktajli
 
 <hr/>
+
+
+## Zrzutu ekranu
+
+### Widok strony głównej
+<p>
+  <img src="./printscreen/home.png" alt="github" width="600" /> 
+</p>
+
+### Widok listy produktów - poszczególnych składników do mieszania
+<p>
+  <img src="./printscreen/listaProduktów.png" alt="github" width="600" /> 
+</p>
+
+
+### Formularz dodawania produktu
+<p>
+  <img src="./printscreen/addProduct.png" alt="github" width="600" /> 
+</p>
+
+### Widok listy koktajli
+<p>
+  <img src="./printscreen/kartyKoktajli.png" alt="github" width="600" /> 
+</p>
+
+### Formularz dodawania / tworzenia koktajlu
+
+<p>
+  <img src="./printscreen/addKoktajl.png" alt="github" width="600" /> 
+</p>
+
+<p>
+  <img src="./printscreen/addKoktajl2.png" alt="github" width="600" /> 
+</p>
+
+<hr/>
+
+
+## Uruchomienie
+
+Repozytorium współdziała z częścią back-endową, którą można znaleźć pod [tym adresem](https://github.com/matir85/homemadeCoctailBook-front/tree/develop)
+
+#### Uruchomienie projektu na swojej lokanej maszynie
+
+Sklonuj repozytorium na swój dysk
+
+```bash
+git clone https://github.com/matir85/homemadeCoctailBook-front/tree/develop
+```
+
+Wejdz do folderu *homemadeCoctailBook-front* i pobierz wymagane zależnosci
+
+```bash
+cd homemadeCoctailBook-front
+npm install
+```
+
+Uruchomienie projektu
+
+```bash
+npm start
+```
+
+Zostanie uruhomiony serwer [http://localhost:3000](http://localhost:3000) na którym dostępna będzie strona z projektem.
+Pamietaj, że pełna funkcjonalność projektu wymaga uruchomienia backendu
+
+Uruchomienie w trybie watch mode
+
+```bash
+npm run start:dev
+```
+
+Stworzenie wersji produkcyjnej
+
+```bash
+npm run start:prod
+```
+
+<hr/>
+
+## Kontakt
+
+
+#### mail: [Gmail](mailto:matir85@gmail.com)
+
+<hr/>
