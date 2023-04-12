@@ -22,6 +22,8 @@ export const AddCoctail = () => {
         description: ''
     })
 
+    const [resultAdd, setResultAdd] = useState<string | null>(null)
+
 
     const handleIngredientFormChange = (index: number, event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | SelectChangeEvent<string>) => {
         let newFormIngredient = formIngredient.map((singleRow, i) => {
@@ -97,9 +99,19 @@ export const AddCoctail = () => {
              console.log(singleCocktailIngredient)
         })
 
+        setResultAdd(`Dodano nowy koktail ${formName.name}`);
     }
 
     if (!productList) return <Spinner/>
+
+    if(resultAdd !== null) {
+        return <div>
+            <p className='info__add_success'>
+                <strong>{resultAdd}</strong>
+            </p>
+            <a href="/coctail" className='btn link' onClick={() => setResultAdd(null)}>Lista koktajli</a>
+        </div>
+    }
 
 
     return (

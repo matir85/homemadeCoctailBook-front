@@ -6,21 +6,30 @@
 }
 
 .coctailCard {
-    width: 250px;
+    width: 275px;
     margin: 10px;
-    padding: 5px;
     border: 1px solid black;
     border-radius: 10px;
-    background-color: antiquewhite;
-    font-family: Sono, sans-serif;
-    font-weight: bold;
-    font-size: 20px;
+}
+.coctailCard__header {
+    padding: 10px 0 0 10px;
+    font-family: Sono;
 }
 .ingradientRow {
     font-size: 16px;
-    font-weight: lighter;
+    font-weight: bold;
+    font-family: Sono, sans-serif;
+    border: 1px solid black;
+}
+.ingradientRow__ingradient {
+    width: 225px;
+}
+.ingradientRow__quantity {
+    width: 30px;
 }
 .descriptionCocktail{
     font-size: 12px;
-    font-weight: lighter;
+}
+CardHeader {
+    font-weight: bold;
 }

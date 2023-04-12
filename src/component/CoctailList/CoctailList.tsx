@@ -21,16 +21,24 @@ export const CoctailList = () => {
     },[])
 
     if(coctailList === null) {
-        return <h1>Brak koktajli w bazie danych</h1>
+        return <div>
+            <h1>Brak koktajli w bazie danych</h1>
+            <nav className='navigation'>
+                <ButtonLink text='Dodaj koktajl' to='/coctail/add'/>
+                <ButtonLink text={'Strona głowna'} to={'/'}/>
+            </nav>
+        </div>
     }
     return (
         <div>
             <div className='coctaiList'>
                 {coctailList.map(coctail => <CoctailCard key={coctail.id} coctails={coctail}/>)}
             </div>
-            <ButtonLink text='Dodaj kolejny koktajl' to='/coctail/add'/>
+            <nav className='navigation'>
+                <ButtonLink text='Dodaj koktajl' to='/coctail/add'/>
+                <ButtonLink text={'Strona głowna'} to={'/'}/>
+            </nav>
+
         </div>
-
     )
-
 }

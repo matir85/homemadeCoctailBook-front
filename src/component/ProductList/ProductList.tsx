@@ -26,7 +26,11 @@ export const ProductList = () => {
         <div className='productList'>
             <h1 className='info__header_productList'>Lista dostępnych produktów do mieszania</h1>
             <ProductTable products={productList} onProductChange={refreshProductList}/>
-            <ButtonLink text={'Dodaj'} to={'/product/add'}/>
+            <nav className='navigation'>
+                <ButtonLink text={'Dodaj'} to={'/product/add'}/>
+                <ButtonLink text={'Strona głowna'} to={'/'}/>
+            </nav>
+
         </div>
     )
 }

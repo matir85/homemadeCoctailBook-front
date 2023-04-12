@@ -1,5 +1,5 @@
 .btn {
-    width: 100px;
+    min-width: 100px;
     background: black;
     font-family: "Sono", sans-serif;
     font-weight: bold;
@@ -7,6 +7,7 @@
     font-size: 15px;
     color: #ffd700;
     padding: 10px 15px;
+    margin: 5px;
     border-radius: 15px;
 }
 
